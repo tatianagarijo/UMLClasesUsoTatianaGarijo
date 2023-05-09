@@ -1,12 +1,25 @@
 
 @startuml
+skinparam usecase {
+BackgroundColor #CFF8DC
+BorderColor #4CF885
+ArrowColor #4CF885
+}
+
 left to right direction
-:Ciudadano: as ciu
-:Ciudadano Extranjero: as ext
-usecase (Registrar entrada) as UC1
-usecase (Tomar huellas) as UC2
-ciu <|- ext
-ciu -- UC1
-UC2 .left.> UC1: <<extend>>
-ext -- UC2
+usecase UC1 as "**Sacar dinero**
+--
++solicitud hecha"
+
+usecase "**Retener tarjeta**" as UC2
+UC1 <.. UC2 : <<Extend>>
+
+note left of UC2
+Descripción
+--
+condición:
+{ historia sospechosa}
+punto de extensión:
+ solicitud hecha
+end note
 @enduml
