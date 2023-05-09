@@ -1,5 +1,5 @@
 @startuml
-usecase (Mostrar menú)
+:Actor: -- (Mostrar menú)
 @enduml
 
 
