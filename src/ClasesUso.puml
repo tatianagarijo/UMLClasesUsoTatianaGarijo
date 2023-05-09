@@ -1,7 +1,11 @@
 
 @startuml
 left to right direction
-usecase (Acceder) as UC1
-usecase (Registrarse) as UC2
-UC1 <.. UC2 : <<extend>>
+:Cliente: as cli
+usecase (Reservar vuelo) as UC1
+usecase (Elegir asienteos) as UC2
+:Cliente VIP: as vip
+cli <|- vip
+cli -- UC1
+vip -- UC2
 @enduml
