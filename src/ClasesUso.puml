@@ -1,20 +1,12 @@
 
 @startuml
 left to right direction
-:Usuario: as usu
-:Administrador: as admin
-usecase (Iniciar sesión) as UC1
-usecase (Recuperar contraseña) as UC2
-usecase (Modificar contraseña) as UC3
-usecase (Cerrar sesión) as UC4
-usecase (Registrar usuario) as UC5
-usecase (Instalar programa) as UC6
-
-usu <|- admin
-usu -- UC1
-usu -- UC2
-usu -- UC3
-usu -- UC4
-admin -- UC5
-admin -- UC6
+:Ciudadano: as ciu
+:Ciudadano Extranjero: as ext
+usecase (Registrar entrada) as UC1
+usecase (Tomar huellas) as UC2
+ciu <|- ext
+ciu -- UC1
+UC2 .left.> UC1: <<extend>>
+ext -- UC2
 @enduml
