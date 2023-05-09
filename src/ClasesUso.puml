@@ -1,20 +1,20 @@
 
 @startuml
 left to right direction
-:new Actor: as act
-usecase (Identificarse) as UC1
-usecase (Pagar) as UC2
-usecase (Elegir mensajero) as UC3
-usecase (Confirmar) as UC4
-usecase (Registrarse) as UC5
+:Usuario: as usu
+:Administrador: as admin
+usecase (Iniciar sesión) as UC1
+usecase (Recuperar contraseña) as UC2
+usecase (Modificar contraseña) as UC3
+usecase (Cerrar sesión) as UC4
+usecase (Registrar usuario) as UC5
+usecase (Instalar programa) as UC6
 
-act -- UC1
-act -- UC2
-act -- UC3
-act -- UC4
-UC1 <.. UC5: <<extend>>
-usecase (Pagar con tarjeta) as UC6
-usecase (Pagar con transferencia) as UC7
-UC2 <|-- UC6
-UC2 <|-- UC7
+usu <|- admin
+usu -- UC1
+usu -- UC2
+usu -- UC3
+usu -- UC4
+admin -- UC5
+admin -- UC6
 @enduml
