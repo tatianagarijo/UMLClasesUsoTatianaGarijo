@@ -1,17 +1,20 @@
 
 @startuml
 left to right direction
-:Cliente: as cli
-usecase (Meter dinero) as UC1
-usecase (Pedir azúcar) as UC2
-usecase (Pedir Producto) as UC3
-usecase (Cancelar) as UC4
-usecase (Devolver dinero) as UC5
+:new Actor: as act
+usecase (Identificarse) as UC1
+usecase (Pagar) as UC2
+usecase (Elegir mensajero) as UC3
+usecase (Confirmar) as UC4
+usecase (Registrarse) as UC5
 
-cli --- UC1
-cli --- UC2
-cli --- UC3
-cli --- UC4
-UC3 ..> UC5: <<include>>
-UC4 ..> UC5: <<include>>
+act -- UC1
+act -- UC2
+act -- UC3
+act -- UC4
+UC1 <.. UC5: <<extend>>
+usecase (Pagar con tarjeta) as UC6
+usecase (Pagar con transferencia) as UC7
+UC2 <|-- UC6
+UC2 <|-- UC7
 @enduml
