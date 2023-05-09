@@ -1,19 +1,11 @@
 @startuml
 left to right direction
-:Actor: as act
-rectangle {
-usecase (Mostrar menú) as UC1
-usecase (Pedir comida) as UC2
-}
-
-usecase (Entregar comida) as UC3
-
-:Restaurante: as rest
-
-act -- UC1
-act -- UC2
-UC1 -- rest
-UC3 --rest
+:Cliente: as cli
+usecase (Confirmar pedido) as UC1
+usecase (Cancelar pedido) as UC2
+usecase (Devolver cambio) as UC3
+cli -- UC1
+cli -- UC2
+UC1 ..> UC3 : <<include>>
+UC2 ..> UC3 : <<include>>
 @enduml
-
-
