@@ -1,11 +1,7 @@
+
 @startuml
 left to right direction
-:Cliente: as cli
-usecase (Confirmar pedido) as UC1
-usecase (Cancelar pedido) as UC2
-usecase (Devolver cambio) as UC3
-cli -- UC1
-cli -- UC2
-UC1 ..> UC3 : <<include>>
-UC2 ..> UC3 : <<include>>
+usecase (Acceder) as UC1
+usecase (Registrarse) as UC2
+UC1 <.. UC2 : <<extend>>
 @enduml
