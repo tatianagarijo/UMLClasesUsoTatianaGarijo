@@ -2,10 +2,16 @@
 @startuml
 left to right direction
 :Cliente: as cli
-usecase (Reservar vuelo) as UC1
-usecase (Elegir asienteos) as UC2
-:Cliente VIP: as vip
-cli <|- vip
-cli -- UC1
-vip -- UC2
+usecase (Meter dinero) as UC1
+usecase (Pedir azúcar) as UC2
+usecase (Pedir Producto) as UC3
+usecase (Cancelar) as UC4
+usecase (Devolver dinero) as UC5
+
+cli --- UC1
+cli --- UC2
+cli --- UC3
+cli --- UC4
+UC3 ..> UC5: <<include>>
+UC4 ..> UC5: <<include>>
 @enduml
